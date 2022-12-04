@@ -63,7 +63,7 @@ const userData = {
       company: "Cambodia Academy of Digital Technology - CADT , Cambodia.",
       year: "2019 - Current",
       companyLink: "https://www.cadt.edu.kh/",
-      desc: "Majoring in Computer Science. It’s all fun and games until we enter the university.",
+      desc: "Majoring in Computer Science. Its all fun and games until we enter the university.",
     },
     {
       title: "High School",

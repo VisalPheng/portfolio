@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FavouriteProjects() {
   return (
@@ -41,7 +42,7 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/vgo-customer.png"
                 alt="vgo-customer"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
@@ -61,7 +62,7 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/vgo-vendor.png"
                 alt="vgo-vendor"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
@@ -81,7 +82,7 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/kela.png"
                 alt="kela"
                 className="transform hover:scale-125 transition duration-2000 ease-out"
@@ -101,7 +102,7 @@ export default function FavouriteProjects() {
           >
             <div className="relative overflow-hidden shadow-2xl">
               {/* <div className="overlay absolute inset-0 bg-black bg-opacity-70 z-10"></div> */}
-              <img
+              <Image
                 src="/damavey.png"
                 alt="damavey"
                 className="transform hover:scale-125 transition duration-2000 ease-out object-cover shadow-2xl"
