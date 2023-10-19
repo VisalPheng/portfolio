@@ -147,14 +147,19 @@ export default function AboutMe() {
                 src="https://i.imgur.com/R9hpNhE.png"
                 className="object-scale-down h-20 w-20 mx-4 my-4"
               />
+              {/* Nestjs */}
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg"
+                className="object-scale-down h-20 w-20 mx-4 my-4"
+              />
+              {/* Material UI */}
+              <img
+                src="https://mui.com/static/logo.png"
+                className="object-scale-down h-20 w-20 mx-4 my-4"
+              />
               {/* TailwindCSS */}
               <img
                 src="https://i.imgur.com/7Hzrcf7.png"
-                className="object-scale-down h-20 w-20 mx-4 my-4"
-              />
-              {/* Vue */}
-              <img
-                src="https://i.imgur.com/vt8YaRQ.png"
                 className="object-scale-down h-20 w-20 mx-4 my-4"
               />
               {/* Nuxt */}
@@ -177,6 +182,11 @@ export default function AboutMe() {
                 src="https://i.imgur.com/zv24vf4.png"
                 className="object-scale-down h-20 w-20 mx-4 my-4"
               />
+            </div>
+            <h1 className="bg-blue-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+              Languages
+            </h1>
+            <div className="flex flex-row flex-wrap mt-8">
               {/* HTML5 */}
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"
@@ -197,6 +207,16 @@ export default function AboutMe() {
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"
                 className="object-scale-down h-20 w-20 mx-4 my-4"
               />
+              {/* Python */}
+              <img
+                src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/python/python.png"
+                className="object-scale-down h-20 w-20 mx-4 my-4"
+              />
+            </div>
+            <h1 className="bg-blue-500 text-3xl rounded-md px-2 py-1 inline-block font-bold text-gray-50">
+              Tools
+            </h1>
+            <div className="flex flex-row flex-wrap mt-8">
               {/* Git */}
               <img
                 src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"
