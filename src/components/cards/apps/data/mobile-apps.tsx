@@ -8,7 +8,7 @@ export const mobileApps: AppItemType[] = [
   //   image: "/works/gymtracker/logo.jpg",
   //   appstore: "https://apps.apple.com/app/id6474942205",
   //   playstore:
-  //     "https://play.google.com/store/apps/details?id=com.kreatordev.gymtracker",
+  //     "https://play.google.com/store/apps/details?id=com.PhengVisal.gymtracker",
   //   path: "/gymtracker",
   //   tags: ["Flutter", "AdMob", "RevenueCat", "Localization"],
   //   hasBorder: true,
@@ -118,7 +118,7 @@ export const mobileApps: AppItemType[] = [
   //   description:
   //     "A zoom animation package to zoom in/out any widget, and create a zoom animation effect.",
   //   image: "/works/pub-dev/logo.png",
-  //   github: "https://github.com/KreatorDev/zoom_tap_animation",
+  //   github: "https://github.com/PhengVisal/zoom_tap_animation",
   //   pub: "https://pub.dev/packages/zoom_tap_animation",
   //   path: "/work/zoom-tap-animation",
   //   tags: ["Flutter"],
@@ -212,7 +212,7 @@ export const mobileApps: AppItemType[] = [
   //   appstore:
   //     "https://apps.apple.com/app/simple-workout-home-exercises/id1668371203",
   //   playstore:
-  //     "https://play.google.com/store/apps/details?id=com.kreatordev.bodyexercises",
+  //     "https://play.google.com/store/apps/details?id=com.PhengVisal.bodyexercises",
   //   path: "/work/simple-workout",
   //   tags: ["Flutter", "AdMob"],
   // },
@@ -222,7 +222,7 @@ export const mobileApps: AppItemType[] = [
   //     "A voice chat app to send voice messages, and to chat with friends, designed to save time and have fun.",
   //   image: "/works/voz/logo.png",
   //   playstore:
-  //     "https://play.google.com/store/apps/details?id=com.kreatordev.avc",
+  //     "https://play.google.com/store/apps/details?id=com.PhengVisal.avc",
   //   hasBorder: true,
   //   path: "/work/voz",
   //   tags: ["Flutter", "Firebase", "Google STT"],
@@ -235,7 +235,7 @@ export const mobileApps: AppItemType[] = [
   //   appstore:
   //     "https://apps.apple.com/app/قصص-أطفال-مصورة-مغامرات-ممتعة/id1665629088",
   //   playstore:
-  //     "https://play.google.com/store/apps/details?id=com.kreatordev.arabicstories",
+  //     "https://play.google.com/store/apps/details?id=com.PhengVisal.arabicstories",
   //   path: "/work/arabic-stories",
   //   tags: ["Flutter", "Node.js", "AdMob", "RevenueCat"],
   // },
@@ -245,7 +245,7 @@ export const mobileApps: AppItemType[] = [
   //     "A skate & surf shop app to buy skateboards, surfboards, accessories, and to manage orders.",
   //   image: "/works/tamara/logo.png",
   //   playstore:
-  //     "https://play.google.com/store/apps/details?id=com.kreatordev.tamarashop",
+  //     "https://play.google.com/store/apps/details?id=com.PhengVisal.tamarashop",
   //   path: "/work/tamara",
   //   tags: ["Flutter", "Firebase"],
   //   hasBorder: true,

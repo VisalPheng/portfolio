@@ -15,7 +15,7 @@ export default function PreviewAboutCard({
     <div className={cardStyle + className}>
       <div className="flex flex-row w-full">
         <div className="flex flex-col flex-grow">
-          <CardTitle title="KREATORDEV" />
+          <CardTitle title="PhengVisal" />
           <p className="text-xl font-medium mt-4">Hi, I{"'"}m Visal 👋</p>
         </div>
         {/* <Image

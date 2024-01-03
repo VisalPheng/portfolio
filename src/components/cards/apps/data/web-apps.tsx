@@ -224,7 +224,7 @@ export const webApps: AppItemType[] = [
   //   description:
   //     "Anonymous question & answer to get feedback from your followers on social media.",
   //   image: "/works/wdyt/logo.png",
-  //   link: "https://wdyt.app/kreatordev",
+  //   link: "https://wdyt.app/PhengVisal",
   //   path: "/work/wdyt-web",
   //   tags: ["Next.js", "Tailwind CSS", "Node.js"],
   // },
@@ -239,13 +239,13 @@ export const webApps: AppItemType[] = [
   //   hasBorder: true,
   // },
   // {
-  //   title: "KreatorDev Website",
+  //   title: "PhengVisal Website",
   //   description:
   //     "A personal website to introduce myself, showcase my work, and to share my thoughts, providing a way to contact me.",
   //   image: "/me/square.png",
-  //   link: "https://kreatordev.com",
-  //   github: "https://github.com/KreatorDev/KreatorDev.com",
-  //   path: "/work/kreatordev",
+  //   link: "https://PhengVisal.com",
+  //   github: "https://github.com/PhengVisal/PhengVisal.com",
+  //   path: "/work/PhengVisal",
   //   tags: ["Next.js", "Tailwind CSS"],
   //   imageClassName: "bg-neutral-50 dark:bg-white p-2",
   //   hasBorder: true,
