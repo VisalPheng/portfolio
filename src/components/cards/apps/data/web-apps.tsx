@@ -2,6 +2,71 @@ import AppItemType from "./app";
 
 export const webApps: AppItemType[] = [
   {
+    title: "AgentHub",
+    description:
+      "A real estate platform that connects agents, buyers, and sellers through a marketplace and back-office tools, with an integrated payment gateway for secure online transactions. Built at Pointer Property.",
+    image: "/works/agenthub/logo.png",
+    link: "",
+    path: "/work/agenthub-web",
+    tags: [
+      "Nest.js",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Redis",
+      "ElasticSearch",
+      "Docker",
+      "Google Cloud Platform",
+    ],
+    hasBorder: true,
+  },
+  {
+    title: "eValuer Prediction Model",
+    description:
+      "A property price prediction tool that estimates property values from the company's data, trained and deployed with Google Cloud Vertex AI. Built at Pointer Property.",
+    image: "/works/evaluer-prediction-model/logo.png",
+    link: "",
+    path: "/work/evaluer-prediction-model-web",
+    tags: ["Python", "Google Cloud Platform", "Vertex AI"],
+    hasBorder: true,
+  },
+  {
+    title: "Property Valuation System",
+    description:
+      "An internal system for managing and streamlining property valuation workflows for real estate transactions. Built at Pointer Property.",
+    image: "/works/property-valuation-system/logo.png",
+    link: "",
+    path: "/work/property-valuation-system-web",
+    tags: [
+      "Nest.js",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Google Cloud Platform",
+    ],
+    hasBorder: true,
+  },
+  {
+    title: "Pointer CRM",
+    description:
+      "An internal CRM system for managing clients, leads, and property transactions for the company's real estate operations. Built at Pointer Property.",
+    image: "/works/pointer-crm/logo.png",
+    link: "",
+    path: "/work/pointer-crm-web",
+    tags: [
+      "Nest.js",
+      "Node.js",
+      "TypeScript",
+      "PostgreSQL",
+      "Redis",
+      "ElasticSearch",
+      "Docker",
+    ],
+    hasBorder: true,
+  },
+  {
     title: "Digital Insight",
     description:
       "A platform that has all the publications and articles and op-eds from digital insight project that has been published in various media. Collaborated with Konrad Adenauer Stiftung.",
@@ -198,6 +263,36 @@ export const webApps: AppItemType[] = [
     link: "",
     path: "/work/damavey-web",
     tags: ["Laravel", "PHP", "JavaScript", "Tailwind CSS", "MySQL"],
+    hasBorder: true,
+  },
+  {
+    title: "Property Listing Website",
+    description:
+      "A property listing frontend website for a real estate client, connected to a Telegram bot that alerts agents and management when new properties are added. Built at Viniyuk.",
+    image: "/works/viniyuk-property-listing/logo.png",
+    link: "",
+    path: "/work/viniyuk-property-listing-web",
+    tags: ["Vue.js", "JavaScript"],
+    hasBorder: true,
+  },
+  {
+    title: "Property Management Admin Portal",
+    description:
+      "An admin portal for a real estate company to manage properties and agents, including a tool for agents to overlay price, address, and contact info onto property images for self-branding posters. Built at Viniyuk.",
+    image: "/works/viniyuk-admin-portal/logo.png",
+    link: "",
+    path: "/work/viniyuk-admin-portal-web",
+    tags: ["Vue.js", "JavaScript"],
+    hasBorder: true,
+  },
+  {
+    title: "Property Management System API",
+    description:
+      "A backend API powering a real estate property management system, built on a custom-designed database schema for managing properties and agents. Built at Viniyuk.",
+    image: "/works/viniyuk-property-api/logo.png",
+    link: "",
+    path: "/work/viniyuk-property-api-web",
+    tags: ["Laravel", "PHP", "MySQL"],
     hasBorder: true,
   },
   // {
