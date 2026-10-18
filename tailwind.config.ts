@@ -1,14 +1,33 @@
 import type { Config } from "tailwindcss";
 
+const token = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       colors: {
+        // Theme-aware tokens (see globals.css)
+        paper: token("paper"),
+        tile: token("tile"),
+        ink: token("ink"),
+        panel: token("panel"),
+        muted: token("muted"),
+        line: token("line"),
+        accent: "#EBFF00",
+        // Legacy palette, still used by the standalone app pages
         light: "#EEEEEE",
         dark: "#171717",
         lighter: "#F2F2F2",
         darker: "#0D0D0D",
+      },
+      fontFamily: {
+        sans: ['"Be Vietnam Pro"', "ui-sans-serif", "system-ui", "sans-serif"],
+        mono: ['"IBM Plex Mono"', "ui-monospace", "monospace"],
+        display: ['"Pixelify Sans"', '"IBM Plex Mono"', "monospace"],
+      },
+      letterSpacing: {
+        label: "1.2px",
       },
       height: {
         4.5: "18px",

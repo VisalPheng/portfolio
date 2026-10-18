@@ -1,18 +1,22 @@
-import GoHomeButton from "@/shared/components/buttons/go-home-button";
-import cardStyle from "@/shared/styles/card";
+import { Link } from "@tanstack/react-router";
+import Roll from "@/shared/components/ui/roll";
 
 export default function NotFound({ err }: { err?: string }) {
   return (
-    <div className={cardStyle + "items-center text-center py-14"}>
-      <label className="text-7xl font-semibold text-neutral-700 dark:text-neutral-500">
+    <section className="gutter flex min-h-[70vh] w-full flex-col items-start justify-center gap-8 py-16">
+      <p className="label text-muted">( ERROR )</p>
+      <p className="font-display text-[clamp(6rem,22vw,16rem)] leading-none">
         404
-      </label>
-      <div className="h-6" />
-      <label className="text-lg font-light text-neutral-500 mx-10">
+      </p>
+      <p className="max-w-[40ch] text-xl text-muted">
         {err || "We couldn't find the page you're looking for."}
-      </label>
-      <div className="h-10" />
-      <GoHomeButton />
-    </div>
+      </p>
+      <Link
+        to="/"
+        className="label border border-line/80 px-4 py-2.5 transition-colors hover:bg-ink hover:text-paper"
+      >
+        <Roll>← GO HOME</Roll>
+      </Link>
+    </section>
   );
 }

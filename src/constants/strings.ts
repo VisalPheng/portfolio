@@ -10,7 +10,7 @@ const url = "https://" + host;
 const mail = "phengvisall@gmail.com";
 const description = `${author}. Explore my personal portfolio, services and blogs.`;
 const og = `${url}/og.png`;
-const shortAbout = "A software developer based in Cambodia.";
+const shortAbout = "A software developer based in Phnom Penh, Cambodia.";
 const about =
   "Currently interested on developing quality applications as solutions that effectively solve problems, rather than just providing solutions.";
 

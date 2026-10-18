@@ -1,8 +1,7 @@
-"use client";
 
 import ChevronLeftIcon from "@/assets/icons/chevron-left";
 import cardStyle from "@/shared/styles/card";
-import Link from "next/link";
+import { Link } from "@tanstack/react-router";
 import ThemeSwitcher from "../theme/theme-toggle";
 import AppPageType from "./data/page";
 
@@ -18,7 +17,7 @@ export default function Privacy({ page }: { page: AppPageType }) {
     <div className={cardStyle + "!p-3"}>
       <div className="w-full flex flex-row items-center">
         <Link
-          href={app.path}
+          to={app.path}
           className="flex flex-row justify-start items-center gap-2 opacity-30 hover:opacity-100 hover:underline px-2"
         >
           <div className="hover:animate-scale">
@@ -208,7 +207,7 @@ export default function Privacy({ page }: { page: AppPageType }) {
       </div>
       <div className="h-12" />
       <div className="flex flex-row w-full justify-end items-center gap-4 px-2">
-        <Link href={app.path} className={legalStyle}>
+        <Link to={app.path} className={legalStyle}>
           {app.title} © {new Date(now).getFullYear()}
         </Link>
       </div>

@@ -1,0 +1,203 @@
+@import "./shared/styles/input.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		--paper: 255 255 255;
+		--ink: 8 7 7;
+		--panel: 8 7 7;
+		--tile: 204 204 204;
+		--muted: 92 90 88;
+		--line: 8 7 7;
+	}
+	.dark {
+		--paper: 13 12 12;
+		--ink: 255 255 250;
+		--panel: 8 7 7;
+		--tile: 34 32 32;
+		--muted: 160 157 152;
+		--line: 255 255 250;
+	}
+	html {
+		scroll-behavior: smooth;
+		scroll-padding-top: 3.5rem;
+	}
+	body {
+		@apply bg-paper font-sans text-ink antialiased;
+	}
+	::selection {
+		@apply bg-accent text-[#080707];
+	}
+}
+
+@layer components {
+	/* Small uppercase mono label, e.g. [UI/UX] */
+	.label {
+		@apply font-mono text-[13px] font-medium uppercase leading-snug tracking-[0.14em];
+	}
+	/* Larger mono heading, e.g. project names, "BIO" */
+	.heading-mono {
+		@apply font-mono text-[17px] font-medium uppercase leading-snug;
+	}
+	.section-title {
+		@apply font-display text-[2.6rem] uppercase leading-none tracking-[0.02em] md:text-[3.5rem];
+	}
+	.pill {
+		@apply inline-flex items-center rounded-full bg-accent px-2.5 py-1 font-mono text-[11px] font-medium uppercase leading-none tracking-[0.12em] text-[#080707];
+	}
+	.gutter {
+		@apply px-4 xs:px-6 lg:px-[22px];
+	}
+	.dots {
+		background-image: radial-gradient(rgb(var(--line) / 0.13) 1px, transparent 1.2px);
+		background-size: 14px 14px;
+	}
+	.no-scrollbar {
+		scrollbar-width: none;
+	}
+	.no-scrollbar::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+/* Extruded pixel letterforms, standing in for the reference's 3D monogram. */
+.extrude {
+	color: #1c1a1a;
+	text-shadow:
+		1px 1px 0 #0d0c0c,
+		2px 2px 0 #0d0c0c,
+		3px 3px 0 #0d0c0c,
+		4px 4px 0 #0d0c0c,
+		5px 5px 0 #0d0c0c,
+		6px 6px 0 #0d0c0c,
+		7px 7px 0 #0d0c0c,
+		8px 8px 0 #0d0c0c,
+		9px 9px 0 #0d0c0c,
+		10px 10px 0 #0d0c0c,
+		11px 11px 0 #0d0c0c,
+		12px 12px 0 #0d0c0c,
+		14px 18px 28px rgb(0 0 0 / 0.28);
+}
+.extrude-dark {
+	color: #2a2727;
+	text-shadow:
+		1px 1px 0 #141212,
+		2px 2px 0 #141212,
+		3px 3px 0 #141212,
+		4px 4px 0 #141212,
+		5px 5px 0 #141212,
+		6px 6px 0 #141212,
+		7px 7px 0 #141212,
+		8px 8px 0 #141212,
+		9px 9px 0 #141212,
+		10px 10px 0 #141212,
+		11px 11px 0 #141212,
+		12px 12px 0 #141212,
+		14px 18px 32px rgb(0 0 0 / 0.6);
+}
+
+.dark .extrude {
+	color: #3f3b3b;
+	text-shadow:
+		1px 1px 0 #1d1b1b,
+		2px 2px 0 #1d1b1b,
+		3px 3px 0 #1d1b1b,
+		4px 4px 0 #1d1b1b,
+		5px 5px 0 #1d1b1b,
+		6px 6px 0 #1d1b1b,
+		7px 7px 0 #1d1b1b,
+		8px 8px 0 #1d1b1b,
+		9px 9px 0 #1d1b1b,
+		10px 10px 0 #1d1b1b,
+		11px 11px 0 #1d1b1b,
+		12px 12px 0 #1d1b1b,
+		14px 18px 32px rgb(0 0 0 / 0.6);
+}
+
+@keyframes float {
+	0%,
+	100% {
+		transform: translateY(0) rotate(-2deg);
+	}
+	50% {
+		transform: translateY(-14px) rotate(1deg);
+	}
+}
+.float {
+	animation: float 7s ease-in-out infinite;
+}
+
+/* Hover "roll": the label slides up and a copy slides in from below. */
+.roll {
+	display: inline-flex;
+	overflow: hidden;
+	position: relative;
+}
+.roll > span {
+	display: block;
+	transition: transform 0.35s cubic-bezier(0.65, 0, 0.35, 1);
+}
+.roll > span + span {
+	position: absolute;
+	inset: 0;
+	transform: translateY(100%);
+}
+.roll:hover > span:first-child,
+.group:hover .roll > span:first-child {
+	transform: translateY(-100%);
+}
+.roll:hover > span + span,
+.group:hover .roll > span + span {
+	transform: translateY(0);
+}
+
+@keyframes rise {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+.rise {
+	animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes blink {
+	50% {
+		opacity: 0.2;
+	}
+}
+.blink {
+	animation: blink 1.6s steps(1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.rise,
+	.float,
+	.blink {
+		animation: none;
+	}
+	.roll > span {
+		transition: none;
+	}
+}
+
+@keyframes scale {
+	0% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1.06);
+	}
+}
+.hover\:animate-scale:hover {
+	animation-name: scale;
+	animation-duration: 0.25s;
+	animation-fill-mode: forwards;
+}

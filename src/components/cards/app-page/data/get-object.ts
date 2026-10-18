@@ -2,12 +2,13 @@ import { mobileApps } from "../../apps/data/mobile-apps";
 import { webApps } from "../../apps/data/web-apps";
 import AppPageType from "./page";
 
+const pageModules = import.meta.glob<{ default: AppPageType }>(
+  "/src/assets/pages/*.ts",
+  { eager: true }
+);
+
 function getAppPageObject(id: string) {
-  try {
-    return require(`@/assets/pages/${id}`).default;
-  } catch (e) {
-    return null;
-  }
+  return pageModules[`/src/assets/pages/${id}.ts`]?.default ?? null;
 }
 
 function getAppPage(id: string) {

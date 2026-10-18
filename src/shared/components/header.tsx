@@ -1,90 +1,107 @@
-"use client";
-
-import MenuIcon from "@/assets/icons/menu";
-import ThemeSwitcher from "@/components/cards/theme/theme-toggle";
-import AppPaths from "@/constants/paths";
-import Link from "next/link";
+import { author, mail } from "@/constants/strings";
+import { Link } from "@tanstack/react-router";
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import useAppPathname from "../hooks/pathname";
-import cardStyle from "../styles/card";
-import { scrollToTop } from "../utils/window";
-import useDropDownMenu from "./dropdowns/menu";
+import Roll from "./ui/roll";
+
+const nav = [
+  { name: "WORK ©", hash: "work" },
+  { name: "ABOUT", hash: "about" },
+  { name: "REACH OUT", hash: "contact" },
+];
+
+function useLocalTime() {
+  const [time, setTime] = useState<string>();
+  useEffect(() => {
+    const format = () =>
+      new Date().toLocaleTimeString("en-US", {
+        hour: "numeric",
+        minute: "2-digit",
+        timeZone: "Asia/Phnom_Penh",
+      });
+    setTime(format());
+    const id = setInterval(() => setTime(format()), 15_000);
+    return () => clearInterval(id);
+  }, []);
+  return time;
+}
+
+function ThemeButton() {
+  const { resolvedTheme, setTheme } = useTheme();
+  return (
+    <button
+      type="button"
+      onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
+      className="label hover:opacity-60"
+      aria-label="Toggle theme"
+    >
+      <span className="dark:hidden">[DARK]</span>
+      <span className="hidden dark:inline">[LIGHT]</span>
+    </button>
+  );
+}
+
+function Clock() {
+  const time = useLocalTime();
+  return (
+    <span className="inline-flex items-center gap-2 rounded-full bg-accent px-3.5 py-1.5 font-mono text-[11px] font-medium uppercase leading-none tracking-[0.1em] text-[#080707]">
+      PNH[KH]
+      <span className="tabular-nums">{time ?? "--:--"}</span>
+      <span className="blink h-1.5 w-1.5 rounded-full bg-[#080707]" />
+    </span>
+  );
+}
 
 function Header() {
-  const pathname = useAppPathname();
-  const [path, setPath] = useState(pathname);
+  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    setPath(pathname);
-  }, [pathname]);
-
-  const themeSwitcher = (
-    <ThemeSwitcher
-      className="hover:animate-none !w-[80px]"
-      thumbClassName="h-7 w-7"
-    />
-  );
-
-  const btnStyle =
-    "py-4 px-6 sm:py-[8px] sm:px-4 dark:hover:bg-neutral-800 hover:bg-neutral-200/70 dark:hover:text-white hover:text-black rounded-full ";
-  const items = AppPaths.main.map((card) => {
-    const isSelected = path === card.path;
-    return (
-      <Link
-        key={card.name}
-        onClick={() => {
-          scrollToTop();
-          setPath(card.path);
-          if (dropDown.isOpen) dropDown.setOpen(false);
-        }}
-        href={card.path}
-      >
-        <div
-          className={
-            btnStyle +
-            "text-base font-normal min-w-[200px] sm:min-w-0 text-start " +
-            (isSelected ? "text-black dark:text-white" : "")
-          }
-        >
-          {card.name}
-        </div>
-      </Link>
-    );
-  });
-
-  const dropDown = useDropDownMenu({
-    menu: (
-      <div className={cardStyle + "px-3 py-4 justify-start shadow-md"}>
-        {items}
-      </div>
-    ),
-  });
+  const links = nav.map((item) => (
+    <Link
+      key={item.hash}
+      to="/"
+      hash={item.hash}
+      onClick={() => setOpen(false)}
+      className="label"
+    >
+      <Roll>{item.name}</Roll>
+    </Link>
+  ));
 
   return (
-    <header className="w-full sticky top-0 !z-50 bg-lighter dark:bg-darker rounded-b-3xl sm:backdrop-blur-md sm:!bg-opacity-90 pt-5 mt-4">
-      <div
-        className={
-          cardStyle +
-          "!p-1 !flex-row items-center justify-between rounded-3xl w-full text-sm text-neutral-500 text-center"
-        }
-      >
-        <div className="hidden sm:flex flex-wrap items-center w-full">
-          {items}
-        </div>
-        <div>
+    <header className="sticky top-0 z-50 w-full border-b border-line/20 bg-paper">
+      <div className="gutter grid h-14 grid-cols-[1fr_auto] items-center gap-4 md:grid-cols-3">
+        <Link to="/" className="label" onClick={() => setOpen(false)}>
+          <Roll>[{author.toUpperCase()}]</Roll>
+        </Link>
+        <nav className="hidden items-center justify-center gap-10 md:flex lg:gap-[70px]">
+          {links}
+        </nav>
+        <div className="flex items-center justify-end gap-5">
+          <ThemeButton />
+          <span className="hidden sm:inline-flex">
+            <Clock />
+          </span>
           <button
-            onClick={() => dropDown.setOpen(!dropDown.isOpen)}
-            className={btnStyle + "flex sm:hidden !py-1.5 !px-4"}
+            type="button"
+            className="label md:hidden"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
           >
-            <MenuIcon
-              className="w-7 h-7 text-dark dark:text-neutral-200"
-              strokeWidth={2}
-            />
+            {open ? "[CLOSE]" : "[MENU]"}
           </button>
-          <div className="sm:hidden">{dropDown.dropdown}</div>
         </div>
-        {themeSwitcher}
       </div>
+      {open && (
+        <nav className="gutter flex flex-col gap-5 border-t border-line/20 py-6 md:hidden">
+          {links}
+          <a href={"mailto:" + mail} className="label">
+            SAY HELLO
+          </a>
+          <span className="sm:hidden">
+            <Clock />
+          </span>
+        </nav>
+      )}
     </header>
   );
 }
